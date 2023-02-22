@@ -58,15 +58,19 @@ function sum(array) {
 
   let total = 0;
 
+  // if (typeof element === 'object') {
+  //   throw Error;
+  // }
+
   array.forEach(element => {
-    if(typeof element === "string"){
+    if (typeof element === 'string') {
       total += element.length;
-    } else if (typeof element === "number") {
+    } else if (typeof element === 'number') {
       total += element;
-    } else if (typeof element === "boolean") {
+    } else if (typeof element === 'boolean') {
       total += element;
-    }else {
-      throw Error;
+    } else {
+      throw new Error(`Unsupported data type sir or ma'am`);
     }
   });
 
@@ -147,13 +151,13 @@ const wordsUnique = [
 ];
 
 function uniquifyArray(array) {
-  if(!array.length){
+  if (!array.length) {
     return null;
   }
 
   uniqArray = [];
 
-  for (let element of array){
+  for (let element of array) {
     if (!uniqArray.includes(element)) {
       uniqArray.push(element);
     }
@@ -175,22 +179,21 @@ const wordsFind = [
 ];
 
 function doesWordExist(array, findWord) {
-  if(!array.length){
+  if (!array.length) {
     return null;
   }
 
   // iterate through the array and check for word
 
-  for (let i = 0; i < array.length; i++){
-    if (array[i] === findWord){
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === findWord) {
       return true;
-    } 
+    }
   }
 
   // only return false after completing the iteration on the entire array!
 
   return false;
-
 }
 
 // Iteration #7: Count repetition
@@ -209,24 +212,23 @@ const wordsCount = [
 ];
 
 function howManyTimes(array, wordToCount) {
-  if(!array.length){
+  if (!array.length) {
     return 0;
   }
 
-// first create a counter at 0 that will increase each time the wordToCount is found in the array
+  // first create a counter at 0 that will increase each time the wordToCount is found in the array
 
   let count = 0;
 
-  for (let word of array){
-    if (word === wordToCount){
-      count ++;
+  for (let word of array) {
+    if (word === wordToCount) {
+      count++;
     }
   }
 
-// return the count variable that holds the number of times that word appeared 
+  // return the count variable that holds the number of times that word appeared
 
   return count;
-
 }
 
 // Iteration #8: Bonus
@@ -286,17 +288,12 @@ const matrix = [
 ];
 
 function greatestProduct(array) {
-
   // let products = [];
-
   // for(let i=0; i < array.length; i++){
   //   products.push(array[i] + array[i+1])
   // }
-
   // return Math.max(products);
-
   // let result = 0;
-
   // for (let rowIndex = 0; rowIndex < array.length; i++){
   //   const row = array[rowIndex];
   //   for (let columnIndex = 0; columnIndex < row.length; i++){
@@ -305,8 +302,6 @@ function greatestProduct(array) {
   //       result ++;
   //     }
   //   }}
-
-
 }
 
 // The following is required to make unit tests work.
